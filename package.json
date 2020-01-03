@@ -1,0 +1,39 @@
+{
+   "name": "@toba/local-mapbox-source",
+   "description": "Toba Local Mapbox Source",
+   "version": "1.0.0",
+   "private": false,
+   "publishConfig": {
+      "access": "public"
+   },
+   "main": "cjs/index.js",
+   "module": "esm/index.js",
+   "types": "esm/index.d.ts",
+   "files": [
+      "esm",
+      "cjs"
+   ],
+   "author": {
+      "name": "Jason Abbott"
+   },
+   "license": "MIT",
+   "scripts": {
+      "build:esm": "./node_modules/.bin/tsc --project ./node_modules/@toba/develop/tsconfig.esm.json",
+      "build:cjs": "./node_modules/.bin/tsc --project ./node_modules/@toba/develop/tsconfig.cjs-min.json",
+      "prepublishOnly": "npm run build:esm & npm run build:cjs",
+      "test": "jest --coverage"
+   },
+   "devDependencies": {
+      "@toba/develop": "^6.7.13",
+      "@toba/test": "^4.1.17",
+      "@types/mapbox-gl": "^1.6.1"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/toba/local-mapbox-source"
+   },
+   "#": "https://github.com/nodejs/node-gyp/wiki/Updating-npm's-bundled-node-gyp",
+   "dependencies": {
+      "mapbox-gl": "^1.6.1"
+   }
+}
